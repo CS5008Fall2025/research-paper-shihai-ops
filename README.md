@@ -25,12 +25,14 @@ Make sure to include the following:
 
 ### Time complexity of traditional BST
 | Operation | Average Case | Worst Case |
+|-----------|-------------:|-----------:|
 | Search | $O(\log N)$ | $O(N)$ |
 | Insert | $O(\log N)$ | $O(N)$ |
 | Delete | $O(\log N)$ | $O(N)$ |
 
 ### Space Complexity of AVL Tree
 | Operation | Space Complexity |
+|-----------|-------------:|
 | Search | $O(N)$ |
 | Insert | $O(N)$ |
 | Delete | $O(N)$ |
