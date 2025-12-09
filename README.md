@@ -13,6 +13,12 @@ This paper focuses on the properties of the AVL Tree and its implementation. The
 
  For arbitrary node V, The Balance Factor $$BF(v) = H(v_{left}) - H(v_{right})$$, and $$|BF(v)| \le 1$$
 
+ $$H(v) = 
+\begin{cases} 
+-1 & \text{if } v \text{ is null} \\
+1 + \max(H(v_{left}), H(v_{right})) & \text{otherwise}
+\end{cases}$$
+
 This improvement is a milestone in the development of computer science. It is the very first self-balancing binary search tree in history. It was introduced in 1962 by two Soviet mathematicians, Georgy Adelson-Velsky and Evgenii Landis.[1]
                    
  
