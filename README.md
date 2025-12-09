@@ -13,15 +13,15 @@ Note the following is an example outline to help you. Please rework as you need,
 - What is the problem it solves? 
 - Provide a brief history of the algorithm/datastructure. (make sure to cite sources)
 - Provide an introduction to the rest of the paper. 
-This study focuses on the properties of the AVL Tree and its implementation. The AVL tree is one of the most important data structures invented by Georgy Adelson-Velsky and Evgenii Landis	in 1962. It creatively resolved the problem of BST(Binary Search Tree) when processing well-sorted data. In this case, the BST will degrade to a linked list and the time complexity of search, insert and delete would be $O(n)$. To solve this problem, the AVL tree introduces a self-balancing property where the heights of the two child subtrees of any node differ by at most one (known as the Balance Factor). If this property is violated during an insertion or deletion, the tree automatically restores balance through a series of rotation operations (Left, Right, Left-Right, or Right-Left). This mechanism guarantees that the tree height always remains logarithmic relative to the number of nodes, ensuring a time complexity of $O(\log n)$ for search, insertion, and deletion operations. This improvement is a milestone in the development of computer science. It is the very first self-balancing binary search tree. It was introduced in 1962 by two Soviet mathematicians, Georgy Adelson-Velsky and Evgenii Landis.[1]
+This study focuses on the properties of the AVL Tree and its implementation. The AVL tree is one of the most important data structures invented by Georgy Adelson-Velsky and Evgenii Landis	in 1962. It creatively resolved the problem of BST(Binary Search Tree) when processing well-sorted data. In this case, the BST will degrade to a linked list and the time complexity of search, insert and delete would be $O(n)$. To solve this problem, the AVL tree introduces a self-balancing property where the heights of the two child subtrees of any node differ by at most one (known as the Balance Factor). If this property is violated during an insertion or deletion, the tree automatically restores balance through a series of rotation operations (Left, Right, Left-Right, or Right-Left). This mechanism guarantees that the tree height always remains logarithmic relative to the number of nodes, ensuring a time complexity of $O(\log n)$ for search, insertion, and deletion operations. This improvement is a milestone in the development of computer science. It is the very first self-balancing binary search tree in history. It was introduced in 1962 by two Soviet mathematicians, Georgy Adelson-Velsky and Evgenii Landis.[1]
 
-The remainder of this paper will analyse the AVL Tree's properties, discuss the structure and operation of ALE Tree. How is this structure helpful in reducing the depth of the BST tree and resulting in a faster time complexity? Finally, the report discusses implementation details, including code structure, testing strategies, and the specific challenges encountered during development.
+The remainder of this paper will analyse the AVL Tree's properties, discuss the structure and operation of the AVL Tree. How is this structure helpful in reducing the depth of the BST tree and resulting in a faster time complexity? Finally, the report discusses implementation details, including code structure, testing strategies, and the specific challenges encountered during development.
 
 ## Analysis of Algorithm/Datastructure
 Make sure to include the following:
 - Time Complexity
 - Space Complexity
-- General analysis of the algorithm/datastructure
+- General analysis of the algorithm/data structure
 
 ### Time complexity of traditional BST
 | Operation | Average Case | Worst Case |
@@ -42,6 +42,27 @@ Make sure to include the following:
 |-------------|-------------|
 | $O(N)$ | $O(N)$ |
 
+From the forms above, it is clearly to see that both BST and AVL tree has an average of $O(\log N)$ for time complexity. However, for more sorted data sample that the BST receives, the slower the BST becomes. When handling a well-sorted data sample, the BST will degrade to a linked list. Leafs no longer exist. Let us insert [1, 2, 3, 4, 5] inside the BST. As the code shows below, let's begin with 1. 1 will be stored in the root， then insert 2, 2 > 1, the ```python else:``` block will be executed, and add 2 at the right side of the tree branch. Then we insert 3, 3 > 2, and add 3 to the right child. Same for all monotonic increasing elements, all left children will stay empty. Similarly, for a monotonic decreasing data sample, the  ```python if key < node.key: ``` will always be executed and always store data at the left child, and all right children will stay empty, making the BST become a linked list. 
+```python
+# insert data into bst recursively. 
+ def insert(self, key):
+        if self.root is None:
+            self.root = BSTNode(key)
+        else:
+            self._insert(self.root, key)
+
+def _insert(self, node, key):
+        if key < node.key:
+            if node.left is None:
+                node.left = BSTNode(key)# 
+            else:
+                self._insert(node.left, key)
+        else:
+            if node.right is None:
+                node.right = BSTNode(key)
+            else:
+                self._insert(node.right, key)
+```
 ## Empirical Analysis
 - What is the empirical analysis?
 - Provide specific examples / data.
