@@ -42,22 +42,22 @@ Make sure to include the following:
 |-------------|-------------|
 | $O(N)$ | $O(N)$ |
 
-From the forms above, it is clearly to see that both BST and AVL tree has an average of $O(\log N)$ for time complexity. However, for more sorted data sample that the BST receives, the slower the BST becomes. When handling a well-sorted data sample, the BST will degrade to a linked list. Leafs no longer exist. Let us insert [1, 2, 3, 4, 5] inside the BST. As the code shows below, let's begin with 1. 1 will be stored in the root， then insert 2, 2 > 1, the ```python else:``` block will be executed, and add 2 at the right side of the tree branch. Then we insert 3, 3 > 2, and add 3 to the right child. Same for all monotonic increasing elements, all left children will stay empty. Similarly, for a monotonic decreasing data sample, the  ```python if key < node.key: ``` will always be executed and always store data at the left child, and all right children will stay empty, making the BST become a linked list. 
+From the forms above, it is clearly to see that both BST and AVL tree has an average of $O(\log N)$ for time complexity. However, for more sorted data sample that the BST receives, the slower the BST becomes. When handling a well-sorted data sample, the BST will degrade to a linked list. Leafs no longer exist. Let us insert [1, 2, 3, 4, 5] inside the BST. As the code shows below, let's begin with 1. 1 will be stored in the root， then insert 2, 2 > 1, the ``` else:``` block will be executed, and add 2 at the right side of the tree branch. Then we insert 3, 3 > 2, and add 3 to the right child. Same for all monotonic increasing elements, all left children will stay empty. Similarly, for a monotonic decreasing data sample, the  ```if key < node.key: ``` will always be executed and always store data at the left child, and all right children will stay empty, making the BST become a linked list. 
 ```python
 # insert data into bst recursively. 
  def insert(self, key):
-        if self.root is None:
+        if self.root is None: 
             self.root = BSTNode(key)
         else:
             self._insert(self.root, key)
 
 def _insert(self, node, key):
-        if key < node.key:
+        if key < node.key:  # always store data here if the data sample is monotonic decreasing. 
             if node.left is None:
                 node.left = BSTNode(key)# 
             else:
                 self._insert(node.left, key)
-        else:
+        else: # always store data here if the data sample is monotonic increasing. 
             if node.right is None:
                 node.right = BSTNode(key)
             else:
