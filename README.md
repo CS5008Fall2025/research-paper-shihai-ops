@@ -38,11 +38,11 @@ Make sure to include the following:
 | Delete | $O(\log N)$ | $O(\log N)$ |
 
 ### Space Complexity of BST and AVL
-| Operation | Space Complexity |
-|-----------|-------------|
-| Search | $O(N)$ |
-| Insert | $O(N)$ |
-| Delete | $O(N)$ |
+| BST | AVL |
+|-------------|-------------|
+| $O(N)$ | $O(N)$ |
+| $O(N)$ | $O(N)$ |
+| $O(N)$ | $O(N)$ |
 ## Empirical Analysis
 - What is the empirical analysis?
 - Provide specific examples / data.
