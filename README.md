@@ -42,7 +42,31 @@ Make sure to include the following:
 |-------------|-------------|
 | $O(N)$ | $O(N)$ |
 
-From the forms above, it is clearly to see that both BST and AVL tree has an average of $O(\log N)$ for time complexity. However, for more sorted data sample that the BST receives, the slower the BST becomes. When handling a well-sorted data sample, the BST will degrade to a linked list. Leafs no longer exist. Let us insert [1, 2, 3, 4, 5] inside the BST. As the code shows below, let's begin with 1. 1 will be stored in the root， then insert 2, 2 > 1, the ``` else:``` block will be executed, and add 2 at the right side of the tree branch. Then we insert 3, 3 > 2, and add 3 to the right child. Same for all monotonic increasing elements, all left children will stay empty. Similarly, for a monotonic decreasing data sample, the  ```if key < node.key: ``` will always be executed and always store data at the left child, and all right children will stay empty, making the BST become a linked list. 
+From the forms above, it is clearly to see that both BST and AVL tree has an average of $O(\log N)$ for time complexity. However, the more sorted data samples that the BST receives, the slower the BST becomes.
+When handling a random sequence of sample data, both BST and AVL have $O(\log N)$ of time complexity. It is because the time complexity of tree operations is directly proportional to the height of the tree. If the data sample is highly randomized, both the left and right children would have a similar chance to be used to store data, hence, the tree is mostly balanced, making the feature of AVL, such as get_balance(node)， rotate, unnecessary. 
+
+```python
+# insert data into bst recursively. 
+ def insert(self, key):
+        if self.root is None: 
+            self.root = BSTNode(key)
+        else:
+            self._insert(self.root, key)
+
+def _insert(self, node, key):
+        if key < node.key:  # If and else block would be in a highly randomized sample data, their chance of being used is similar. 
+            if node.left is None:
+                node.left = BSTNode(key)# 
+            else:
+                self._insert(node.left, key)
+        else: # If and else block would be in a highly randomized sample data, their chance of being used is similar. 
+            if node.right is None:
+                node.right = BSTNode(key)
+            else:
+                self._insert(node.right, key)
+```
+
+When handling a well-sorted data sample, the BST will degrade to a linked list. Leafs no longer exist. Let us insert [1, 2, 3, 4, 5] inside the BST. As the code shows below, let's begin with 1. 1 will be stored in the root， then insert 2, 2 > 1, the ``` else:``` block will be executed, and add 2 at the right side of the tree branch. Then we insert 3, 3 > 2, and add 3 to the right child. Same for all monotonic increasing elements, all left children will stay empty. Similarly, for a monotonic decreasing data sample, the  ```if key < node.key: ``` will always be executed and always store data at the left child, and all right children will stay empty, making the BST degrade to a linked list. Hence, the time complexity of this case would be the same as a linked list. 
 ```python
 # insert data into bst recursively. 
  def insert(self, key):
@@ -63,6 +87,23 @@ def _insert(self, node, key):
             else:
                 self._insert(node.right, key)
 ```
+In comparison, the AVL tree will automatically detect this imbalance using the balance factor, which tracks the height difference between the left and right subtrees. When sorted data (e.g., [1, 2, 3, 4, 5]) is inserted, the AVL tree recognizes that the tree is becoming right-heavy (balance factor < -1). It immediately triggers a ```left_rotate``` to restructure the nodes, ensuring the root remains a median value rather than the smallest element.
+```python
+# Check if the right is too heavy and input is larger than the current right children.
+    if balance < -1 and key > node.right.key:
+        return self.left_rotate(node) #If it is true, perform left rotation.
+
+    def left_rotate(self, z):
+        y = z.right #y is the future new root node and current right child of z
+        T2 = y.left # Old left child of y. 
+        y.left = z # y goes to the root and z becomes the left child of y
+        z.right = T2 # T2 becomes the right child of z
+        z.height = 1 + max(self.get_height(z.left), self.get_height(z.right))# update the height of the tree
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
+        return y
+
+```
+
 ## Empirical Analysis
 - What is the empirical analysis?
 - Provide specific examples / data.
