@@ -41,8 +41,7 @@ Make sure to include the following:
 | BST | AVL |
 |-------------|-------------|
 | $O(N)$ | $O(N)$ |
-| $O(N)$ | $O(N)$ |
-| $O(N)$ | $O(N)$ |
+
 ## Empirical Analysis
 - What is the empirical analysis?
 - Provide specific examples / data.
