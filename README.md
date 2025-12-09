@@ -102,9 +102,9 @@ In comparison, the AVL tree will automatically detect this imbalance using the b
 - Provide specific examples / data.
 ### Time Complexity comparison
 The data of the time consumed by BST and AVL and highet of BST and AVL have shown below. 
-![analysis_random.png]
-![analysis_reverse.png]
-![analysis_sorted.png]
+![analysis_random]
+![analysis_reverse]
+![analysis_sorted]
 
 
 ## Application
