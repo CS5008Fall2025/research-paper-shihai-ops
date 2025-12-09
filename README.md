@@ -31,13 +31,18 @@ Make sure to include the following:
 | Delete | $O(\log N)$ | $O(N)$ |
 
 ### Space Complexity of AVL Tree
+| Operation | Average Case | Worst Case |
+|-----------|-------------|-----------|
+| Search | $O(\log N)$ | $O(\log N)$ | 
+| Insert | $O(\log N)$ | $O(\log N)$ |
+| Delete | $O(\log N)$ | $O(\log N)$ |
+
+### Space Complexity of BST and AVL
 | Operation | Space Complexity |
 |-----------|-------------|
 | Search | $O(N)$ |
 | Insert | $O(N)$ |
 | Delete | $O(N)$ |
-
-### Space Complexity of BST and AVL
 ## Empirical Analysis
 - What is the empirical analysis?
 - Provide specific examples / data.
