@@ -24,18 +24,18 @@ Make sure to include the following:
 - General analysis of the algorithm/data structure
 
 ### Time complexity of traditional BST
-| Operation | Average Case | Worst Case |
-|-----------|-------------|-----------|
-| Search | $O(\log N)$ | $O(N)$ |
-| Insert | $O(\log N)$ | $O(N)$ |
-| Delete | $O(\log N)$ | $O(N)$ |
+| Operation |Best Case| Average Case | Worst Case |
+|-----------|---|-------------|-----------|
+| Search | $O(\log N)$ | $O(\log N)$ | $O(N)$ |
+| Insert | $O(\log N)$ | $O(\log N)$ | $O(N)$ |
+| Delete | $O(\log N)$ | $O(\log N)$ | $O(N)$ |
 
 ### Space Complexity of AVL Tree
-| Operation | Average Case | Worst Case |
-|-----------|-------------|-----------|
-| Search | $O(\log N)$ | $O(\log N)$ | 
-| Insert | $O(\log N)$ | $O(\log N)$ |
-| Delete | $O(\log N)$ | $O(\log N)$ |
+| Operation |Best Case| Average Case | Worst Case |
+|-----------|-------------|-----------|---|
+| Search | $O(\log N)$ | $O(\log N)$ | $O(\log N)$ | 
+| Insert | $O(\log N)$ | $O(\log N)$ | $O(\log N)$ |
+| Delete | $O(\log N)$ | $O(\log N)$ | $O(\log N)$ |
 
 ### Space Complexity of BST and AVL
 | BST | AVL |
