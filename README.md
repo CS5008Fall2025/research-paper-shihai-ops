@@ -111,13 +111,14 @@ In comparison, the AVL tree will automatically detect this imbalance using the b
 
 ## Empirical Analysis
 - What is the empirical analysis?
-- Provide specific examples / data.
+- Provide specific examples/data.
 ### Time Complexity comparison
-The data of the time consumed by BST and AVL and highet of BST and AVL have shown below. 
+The data of the time consumed by generating a BST and an AVL tree, and the height of BST and AVL have shown below. 
 ![analysis_random](analysis_random.png)
+In the random case, the BST costs less time than AVL. It is because the AVL needs to check the height of its left and right children and calculate the balance factor, and check whether to perform rotation or not when inserting a new node into the AVL tree. Although the height of AVL is slightly lower than the BST, but BST performs fewer steps during each insertion, making it slightly faster to build a tree in a random sequence dataset. 
 ![analysis_reverse](analysis_reverse.png)
 ![analysis_sorted](analysis_sorted.png)
-
+In both 
 
 ## Application
 - What is the algorithm/datastructure used for?
