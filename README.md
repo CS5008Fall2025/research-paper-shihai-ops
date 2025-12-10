@@ -143,11 +143,6 @@ In a database, scan operation could be too slow if run in time complexity of O(n
 The Windows NT kernel uses AVL tree structures in its Virtual Address Descriptor (VAD) tree to manage the virtual memory address space of processes. [3]
 
 ## Implementation
-- What language did you use?
-- What libraries did you use?
-- What were the challenges you faced?
-- Provide key points of the algorithm/datastructure implementation, discuss the code.
-- If you found code in another language, and then implemented in your own language that is fine - but make sure to document that.
 * [trees.py] -- implementation of BST and AVL in Python
 * [run_analysis.py] -- generate test result in .csv form and line chart.
 * [generate_data.py] -- generate dataset needed in random, reversed and ascending order.
