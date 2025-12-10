@@ -159,6 +159,8 @@ This project is written in Python. In trees.py, I use ```sys``` library ```sys.s
 
 
 At the beginning, the Python interpreter does not allow me to test on BST with sorted data when input number N=2000. Python has a default recursion limit of 1,000. Since a BST degrades into a linked list ($O(N)$ height) when fed sorted data, testing with N=2000 or greater caused a RecursionError. 
+
+### AVL implementation ###
 ```python
 class AVLNode:
     def __init__(self, key):
