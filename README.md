@@ -118,7 +118,7 @@ The data of the time consumed by generating a BST and an AVL tree, and the heigh
 In the random case, the BST costs less time than AVL. It is because the AVL needs to check the height of its left and right children and calculate the balance factor, and check whether to perform rotation or not when inserting a new node into the AVL tree. Although the height of AVL is slightly lower than the BST, but BST performs fewer steps during each insertion, making it slightly faster to build a tree in a random sequence dataset. The height of BST and AVL both grow at logarithmic speed. 
 ![analysis_reverse](analysis_reverse.png)
 ![analysis_sorted](analysis_sorted.png)
-The height of the BST is equal to the number of inputs for both the reversed and the ascending sequence. While the height of AVL is highly correlated with the log2(n) function, showing that the height of the AVL tree has a logarithmic growth rate along with the input size. 
+The height of the BST is equal to the number of inputs for both the reversed and the ascending sequence. While the height of AVL is highly correlated with the log2(n) function, showing that the height of the AVL tree has a logarithmic growth rate along with the input size for both sorted ascending and descending datasets. 
 ![analysis_reverse2](analysis_reverse2.png)
 ![analysis_sorted2](analysis_sorted2.png)
 ## Application
