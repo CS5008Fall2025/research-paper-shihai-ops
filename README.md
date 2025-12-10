@@ -124,7 +124,7 @@ The height of the BST is equal to the number of inputs for both the reversed and
 The total time consumed to build a tree equals to add of every single time cost by every insertion. For a tree that contains N nodes, the worst-case BST cost is 
 $$\text{Total Time} = \sum_{i=1}^{N} i = \frac{N(N+1)}{2} \approx O(N^2)$$
 The average case of BST and AVL cost is 
-
+$$\sum_{i=1}^{N} \log i = \log(N!) \approx N \log N$$
 ## Application
 - What is the algorithm/datastructure used for?
 - Provide specific examples
