@@ -139,11 +139,13 @@ $$\text{Total Time} = \sum_{i=1}^{N} i = \frac{N(N+1)}{2} \approx O(N^2)$$
 The average case of BST and AVL cost is 
 $$\sum_{i=1}^{N} \log i = \log(N!) \approx N \log (N)$$
 ## Application
-- What is the algorithm/datastructure used for?
+- What is the algorithm/data structure used for?
 - Provide specific examples
 - Why is it useful / used in that field area?
 - Make sure to provide sources for your information.
-
+The AVL tree is primarily used to search data. Its property is particularly good at dealing with frequent searches on data that is dynamic(Requires frequent insertions and deletions). Because it enforces strict balancing, it guarantees $O(\log N)$ time complexity for lookup operations, making it much faster than standard Binary Search Trees (BSTs) in read-heavy scenarios where worst-case performance is not acceptable. [1].
+In a database, scan operation could be too slow if run in time complexity of O(n). AVL trees are often chosen over other structures because their strict balancing results in shorter average path lengths, optimizing lookup speed at the cost of slightly slower insertion in a highly randomized dataset.  
+The Windows NT kernel uses AVL tree structures in its Virtual Address Descriptor (VAD) tree to manage the virtual memory address space of processes. [3]
 
 ## Implementation
 - What language did you use?
@@ -159,3 +161,5 @@ $$\sum_{i=1}^{N} \log i = \log(N!) \approx N \log (N)$$
 
 ## Reference
 [1] G. M. Adelson-Velsky and E. M. Landis. 1962. An algorithm for the organization of information. Doklady Akademii Nauk SSSR 146 (1962), 263–266. (English translation: Soviet Math. Dokl. 3, 1259–1263).
+[2] Ben Pfaff. 2004. Performance analysis of BSTs in system software. ACM SIGMETRICS Performance Evaluation Review 32, 1 (June 2004), 410–411.
+[3] Mark Russinovich and David A. Solomon. 2005. Microsoft Windows Internals (4th ed.). Microsoft Press, Redmond, WA, USA.
