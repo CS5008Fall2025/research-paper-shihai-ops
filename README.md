@@ -11,7 +11,7 @@ Note the following is an example outline to help you. Please rework as you need,
 ## Introduction
 This paper focuses on the properties of the AVL Tree and its implementation. The AVL tree is one of the most important data structures invented by Georgy Adelson-Velsky and Evgenii Landis	in 1962. It creatively resolved the problem of BST(Binary Search Tree) when processing well-sorted data. In this case, the BST will degrade to a linked list, and the time complexity of search, insert and delete would be $O(n)$. To solve this problem, the AVL tree introduces a self-balancing property where the heights of the two child subtrees of any node differ by at most one (known as the Balance Factor). If this property is violated during an insertion or deletion, the tree automatically restores balance through a series of rotation operations (Left, Right, Left-Right, or Right-Left). This mechanism guarantees that the tree height always remains logarithmic relative to the number of nodes, ensuring a time complexity of $O(\log n)$ for search, insertion, and deletion operations. 
 
- For arbitrary node V in AVL Tree, The Balance Factor $$BF(v) = H(v_{left}) - H(v_{right})$$, and $$|BF(v)| \le 1$$
+ For an arbitrary node V in AVL Tree, The Balance Factor $$BF(v) = H(v_{left}) - H(v_{right})$$, and $$|BF(v)| \le 1$$
 
  $$H(v) = 
 \begin{cases} 
@@ -110,8 +110,6 @@ In comparison, the AVL tree will automatically detect this imbalance using the b
 ```
 
 ## Empirical Analysis
-- What is the empirical analysis?
-- Provide specific examples/data.
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
 [analysis_random_height](analysis_random_height.csv), 
 [analysis_reverse_sorted_height](analysis_reverse_sorted_height.csv), 
@@ -139,11 +137,8 @@ $$\text{Total Time} = \sum_{i=1}^{N} i = \frac{N(N+1)}{2} \approx O(N^2)$$
 The average case of BST and AVL cost is 
 $$\sum_{i=1}^{N} \log i = \log(N!) \approx N \log (N)$$
 ## Application
-- What is the algorithm/data structure used for?
-- Provide specific examples
-- Why is it useful / used in that field area?
-- Make sure to provide sources for your information.
 The AVL tree is primarily used to search data. Its property is particularly good at dealing with frequent searches on data that is dynamic(Requires frequent insertions and deletions). Because it enforces strict balancing, it guarantees $O(\log N)$ time complexity for lookup operations, making it much faster than standard Binary Search Trees (BSTs) in read-heavy scenarios where worst-case performance is not acceptable. [1].
+
 In a database, scan operation could be too slow if run in time complexity of O(n). AVL trees are often chosen over other structures because their strict balancing results in shorter average path lengths, optimizing lookup speed at the cost of slightly slower insertion in a highly randomized dataset. [2]
 The Windows NT kernel uses AVL tree structures in its Virtual Address Descriptor (VAD) tree to manage the virtual memory address space of processes. [3]
 
@@ -153,13 +148,23 @@ The Windows NT kernel uses AVL tree structures in its Virtual Address Descriptor
 - What were the challenges you faced?
 - Provide key points of the algorithm/datastructure implementation, discuss the code.
 - If you found code in another language, and then implemented in your own language that is fine - but make sure to document that.
+This project is written in Python. In trees.py, I use ```sys``` library ```sys.setrecursionlimit``` to limit the recursion depth to 20000, to allow BST to go deeper(deeper than the Python default limit (1000)). 
 
+```time```: Used to measure the execution time spent by the insertion algorithms.
 
+```random```: Used to generate randomized datasets to test average-case performance.
+
+```unittest```: Used to create a test for trees.py. 
+
+```matplotlib.pyplot```: Used to generate the line graphs for time spent versus input size and tree height comparisons.
+At the beginning, the Python interpreter does not allow me to test on BST with sorted data when input number N=2000. Python has a default recursion limit of 1,000. Since a BST degrades into a linked list ($O(N)$ height) when fed sorted data, testing with N=2000 or greater caused a RecursionError. 
 ## Summary
 - Provide a summary of your findings
 - What did you learn?
 
 ## Reference
 [1] G. M. Adelson-Velsky and E. M. Landis. 1962. An algorithm for the organization of information. Doklady Akademii Nauk SSSR 146 (1962), 263–266. (English translation: Soviet Math. Dokl. 3, 1259–1263).
+
 [2] Ben Pfaff. 2004. Performance analysis of BSTs in system software. ACM SIGMETRICS Performance Evaluation Review 32, 1 (June 2004), 410–411.
+
 [3] Mark Russinovich and David A. Solomon. 2005. Microsoft Windows Internals (4th ed.). Microsoft Press, Redmond, WA, USA.
