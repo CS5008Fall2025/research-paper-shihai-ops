@@ -113,14 +113,14 @@ In comparison, the AVL tree will automatically detect this imbalance using the b
 - What is the empirical analysis?
 - Provide specific examples/data.
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
-[analysis_random_height](analysis_random_height.csv)
-[analysis_reverse_sorted_height](analysis_reverse_sorted_height.csv)
-[analysis_sorted_height](analysis_sorted_height.csv)
+[analysis_random_height](analysis_random_height.csv), 
+[analysis_reverse_sorted_height](analysis_reverse_sorted_height.csv), 
+[analysis_sorted_height](analysis_sorted_height.csv).
 
 The forms of time spent to form a tree versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, the regular BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
-[analysis_random_runtime](analysis_random_runtime.csv)
-[analysis_reverse_sorted_runtime](analysis_reverse_sorted_runtime.csv)
-[analysis_sorted_runtime](analysis_sorted_runtime.csv)
+[analysis_random_runtime](analysis_random_runtime.csv),
+[analysis_reverse_sorted_runtime](analysis_reverse_sorted_runtime.csv),
+[analysis_sorted_runtime](analysis_sorted_runtime.csv).
 
 
 
@@ -137,7 +137,7 @@ The height of the BST is equal to the number of inputs for both the reversed and
 The total time consumed to build a tree equals to add of every single time cost by every insertion. For a tree that contains N nodes, the worst-case BST cost is 
 $$\text{Total Time} = \sum_{i=1}^{N} i = \frac{N(N+1)}{2} \approx O(N^2)$$
 The average case of BST and AVL cost is 
-$$\sum_{i=1}^{N} \log i = \log(N!) \approx N \log N$$
+$$\sum_{i=1}^{N} \log i = \log(N!) \approx N \log (N)$$
 ## Application
 - What is the algorithm/datastructure used for?
 - Provide specific examples
