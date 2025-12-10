@@ -112,6 +112,12 @@ In comparison, the AVL tree will automatically detect this imbalance using the b
 ## Empirical Analysis
 - What is the empirical analysis?
 - Provide specific examples/data.
+The form of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below.
+![analysis_random_height](analysis_random_height.csv)
+![analysis_reverse_sorted_height](analysis_reverse_sorted_height.csv)
+![analysis_sorted_height](analysis_sorted_height.csv)
+
+
 ### Time Complexity comparison
 The data of the time consumed by generating a BST and an AVL tree, and the height of BST and AVL have shown below. 
 ![analysis_random](analysis_random.png)
