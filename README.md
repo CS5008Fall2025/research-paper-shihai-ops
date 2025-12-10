@@ -121,6 +121,10 @@ In the random case, the BST costs less time than AVL. It is because the AVL need
 The height of the BST is equal to the number of inputs for both the reversed and the ascending sequence. While the height of AVL is highly correlated with the log2(n) function, showing that the height of the AVL tree has a logarithmic growth rate along with the input size for both sorted ascending and descending datasets. 
 ![analysis_reverse2](analysis_reverse2.png)
 ![analysis_sorted2](analysis_sorted2.png)
+The total time consumed to build a tree equals to add of every single time cost by every insertion. For a tree that contains N nodes, the worst-case BST cost is 
+$$\text{Total Time} = \sum_{i=1}^{N} i = \frac{N(N+1)}{2} \approx O(N^2)$$
+The average case of BST and AVL cost is 
+
 ## Application
 - What is the algorithm/datastructure used for?
 - Provide specific examples
