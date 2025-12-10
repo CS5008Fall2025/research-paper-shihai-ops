@@ -218,9 +218,8 @@ class AVLTree:
         if balance > 1 and key < node.left.key:  # if the balance > 1 (left is higher than right), and new 
             return self.right_rotate(node)       # node is smaller than the left child, do right rotation. 
         # Case 2 - Right Right                   
-        if balance < -1 and key > node.right.key:  # if the balance < -1 (right is higher than left), and 
-                                                   # new node is bigger than the right child, do left rotation
-            return self.left_rotate(node)          
+        if balance < -1 and key > node.right.key:  # if the balance < -1 (right is higher than left), and                        
+            return self.left_rotate(node)           # new node is bigger than the right child, do left rotation
         # Case 3 - Left Right                        # if the balance > 1 (left is higher than right), and                                if balance > 1 and key > node.left.key:      # new node is bigger than the left child,
             node.left = self.left_rotate(node.left)  # do left rotation for the left child and do right rotation
             return self.right_rotate(node)           # for itself. 
