@@ -112,10 +112,17 @@ In comparison, the AVL tree will automatically detect this imbalance using the b
 ## Empirical Analysis
 - What is the empirical analysis?
 - Provide specific examples/data.
-The form of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below.
-![analysis_random_height](analysis_random_height.csv)
-![analysis_reverse_sorted_height](analysis_reverse_sorted_height.csv)
-![analysis_sorted_height](analysis_sorted_height.csv)
+The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
+[analysis_random_height](analysis_random_height.csv)
+[analysis_reverse_sorted_height](analysis_reverse_sorted_height.csv)
+[analysis_sorted_height](analysis_sorted_height.csv)
+
+The forms of time spent to form a tree versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, the regular BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
+[analysis_random_runtime](analysis_random_runtime.csv)
+[analysis_reverse_sorted_runtime](analysis_reverse_sorted_runtime.csv)
+[analysis_sorted_runtime](analysis_sorted_runtime.csv)
+
+
 
 
 ### Time Complexity comparison
