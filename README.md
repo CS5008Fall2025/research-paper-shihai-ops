@@ -148,7 +148,10 @@ The Windows NT kernel uses AVL tree structures in its Virtual Address Descriptor
 - What were the challenges you faced?
 - Provide key points of the algorithm/datastructure implementation, discuss the code.
 - If you found code in another language, and then implemented in your own language that is fine - but make sure to document that.
-This project is written in Python. In trees.py, I use ```sys``` library ```sys.setrecursionlimit``` to limit the recursion depth to 20000, to allow BST to go deeper(deeper than the Python default limit (1000)). 
+* [trees.py] -- implementation of BST and AVL in Python
+* [run_analysis.py] -- generate test result in .csv form and line chart.
+* [generate_data.py] -- generate dataset needed in random, reversed and ascending order.
+This project is written in Python. In trees.py, I use ```sys``` library ```sys.setrecursionlimit(20000)``` to limit the recursion depth to 20000, to allow BST to go deeper(deeper than the Python default limit (1000)). 
 
 ```time```: Used to measure the execution time spent by the insertion algorithms.
 
@@ -158,6 +161,84 @@ This project is written in Python. In trees.py, I use ```sys``` library ```sys.s
 
 ```matplotlib.pyplot```: Used to generate the line graphs for time spent versus input size and tree height comparisons.
 At the beginning, the Python interpreter does not allow me to test on BST with sorted data when input number N=2000. Python has a default recursion limit of 1,000. Since a BST degrades into a linked list ($O(N)$ height) when fed sorted data, testing with N=2000 or greater caused a RecursionError. 
+```python
+class AVLNode:
+    def __init__(self, key):
+ # define node structure and initialize attributes
+        self.key = key
+        self.left = None
+        self.right = None
+        self.height = 1
+
+class AVLTree:
+    def __init__(self):
+        self.root = None # initialize the tree to empty
+
+    def get_height(self, node):
+        if not node: # If node is empty, height is set to 0. Otherwise, return the height.
+            return 0
+        return node.height
+
+    def get_balance(self, node):
+        if not node: # If node is empty, set balance factor to 0. Otherwise, use the height of the left     
+            return 0 # subtree, subtract the height of the right subtree. 
+        return self.get_height(node.left) - self.get_height(node.right)
+
+    # LL Case
+    def right_rotate(self, z): # logic of right rotate. 
+        y = z.left     # save the future root node. 
+        T3 = y.right   # save the node that will temporarily dispatch from its parent node
+        y.right = z    # y becomes the root, and the old root z becomes the right child of y.
+        z.left = T3    # T3 becomes the left child of z.
+        z.height = 1 + max(self.get_height(z.left), self.get_height(z.right))  # renew the height of z
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))  # renew the height of y
+        return y # return current root node y
+
+    # RR Case
+    def left_rotate(self, z):  # logic of left rotate. 
+        y = z.right  # save the future root node. 
+        T2 = y.left  # save the node that will temporarily dispatch from its parent node
+        y.left = z   # y becomes the root, and the old root z becomes the left child of y.
+        z.right = T2 # T2 becomes the left child of z.
+        z.height = 1 + max(self.get_height(z.left), self.get_height(z.right)) # renew the height of z
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right)) # renew the height of y
+        return y  # return current root node y
+
+    def insert(self, key):  
+        self.root = self._insert(self.root, key) # renew the root node if needed
+
+    def _insert(self, node, key):  # insert key just like bst, first insert the root, if the root 
+        if not node:               # exist, and the number is smaller than current node, the new node 
+            return AVLNode(key)    # becomes the left child, otherwise, it becomes to the right child 
+        elif key < node.key: 
+            node.left = self._insert(node.left, key)
+        else:
+            node.right = self._insert(node.right, key)
+
+        # renew height for both left subtree and right subtree and recheck the balance. 
+        node.height = 1 + max(self.get_height(node.left), self.get_height(node.right)) 
+        balance = self.get_balance(node)
+
+        # Case 1 - Left Left
+        if balance > 1 and key < node.left.key:  # if the balance > 1 (left is higher than right), and new 
+            return self.right_rotate(node)       # node is smaller than the left child, do right rotation. 
+        # Case 2 - Right Right                   
+        if balance < -1 and key > node.right.key:  # if the balance < -1 (right is higher than left), and 
+                                                   # new node is bigger than the right child, do left rotation
+            return self.left_rotate(node)          
+        # Case 3 - Left Right                        # if the balance > 1 (left is higher than right), and                                if balance > 1 and key > node.left.key:      # new node is bigger than the left child,
+            node.left = self.left_rotate(node.left)  # do left rotation for the left child and do right rotation
+            return self.right_rotate(node)           # for itself. 
+        # Case 4 - Right Left
+        if balance < -1 and key < node.right.key:       # if the balance < -1 (right is higher than left), and 
+            node.right = self.right_rotate(node.right)  # node is smaller than the right child, do right rotation
+            return self.left_rotate(node)               # for the right child, and do left rotation for itself. 
+
+        return node # if the tree stays balanced, just return itself(root unchanged). 
+
+```
+
+
 ## Summary
 - Provide a summary of your findings
 - What did you learn?
