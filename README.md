@@ -144,7 +144,7 @@ $$\sum_{i=1}^{N} \log i = \log(N!) \approx N \log (N)$$
 - Why is it useful / used in that field area?
 - Make sure to provide sources for your information.
 The AVL tree is primarily used to search data. Its property is particularly good at dealing with frequent searches on data that is dynamic(Requires frequent insertions and deletions). Because it enforces strict balancing, it guarantees $O(\log N)$ time complexity for lookup operations, making it much faster than standard Binary Search Trees (BSTs) in read-heavy scenarios where worst-case performance is not acceptable. [1].
-In a database, scan operation could be too slow if run in time complexity of O(n). AVL trees are often chosen over other structures because their strict balancing results in shorter average path lengths, optimizing lookup speed at the cost of slightly slower insertion in a highly randomized dataset.  
+In a database, scan operation could be too slow if run in time complexity of O(n). AVL trees are often chosen over other structures because their strict balancing results in shorter average path lengths, optimizing lookup speed at the cost of slightly slower insertion in a highly randomized dataset. [2]
 The Windows NT kernel uses AVL tree structures in its Virtual Address Descriptor (VAD) tree to manage the virtual memory address space of processes. [3]
 
 ## Implementation
