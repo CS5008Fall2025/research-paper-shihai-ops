@@ -2,7 +2,8 @@
 # Research Paper
 * Name: Haisheng Shi
 * Semester: Fall 2025
-* Topic: AVL Tree and its comparison with BST Tree. 
+* Topic: AVL Tree and its comparison with BST Tree.
+* Language Used: Python
 
 
 
