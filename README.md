@@ -118,10 +118,13 @@ For Fibonnacci Sequence(F) and Height(h), we have $(F_h)$, $$N(T_2) = F_4 + F_3 
 
 $$N(T_h) = F_{h+3} - 1$$
 
-$$F_h \approx \frac{\phi^{h}}{\sqrt{5}} - 1$$   $phi \approx \1.618[4]
+$$F_h \approx \frac{\phi^{h}}{\sqrt{5}} - 1$$   $\phi \approx 1.618$[4]
 
-$F_h \approx \phi^h$
+$N(T_h) \approx \phi^{h+2} - 1$
 
+$$h+2 \approx \log_\phi(N(T_h))$$
+
+$$h \approx 1.44 \log_2 N$$
 
 ## Empirical Analysis
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
