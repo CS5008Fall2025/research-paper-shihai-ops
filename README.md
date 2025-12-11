@@ -124,7 +124,7 @@ $$N(T_h) \approx \phi^{h+2} - 1$$
 
 $$h+2 \approx \log_\phi(N(T_h))$$
 
-$$h \approx 1.44 \log_2 N$$ 
+$$h \approx 1.44 \log_2 N$$
 [5]
 ## Empirical Analysis
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
