@@ -124,7 +124,7 @@ $$N(T_h) \approx \phi^{h+2} - 1$$
 
 $$h+2 \approx \log_\phi(N(T_h))$$
 
-$$h \approx 1.44 \log_2 N$$
+$$h \approx 1.44 \log_2 N$$ [5]
 
 ## Empirical Analysis
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
@@ -268,3 +268,5 @@ The design of the AVL tree guarantees that the tree will always stay balanced. H
 [3] Mark Russinovich and David A. Solomon. 2005. Microsoft Windows Internals (4th ed.). Microsoft Press, Redmond, WA, USA.
 
 [4] Donald E. Knuth. 1997. The Art of Computer Programming, Vol. 1: Fundamental Algorithms (3rd ed.). Addison-Wesley Professional, Reading, MA.
+
+[5] Donald E. Knuth. 1998. The Art of Computer Programming, Volume 3: Sorting and Searching (2nd. ed.). Addison Wesley Longman Publishing Co., Inc., Redwood City, CA, USA.
