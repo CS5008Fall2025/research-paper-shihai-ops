@@ -120,7 +120,7 @@ $$N(T_h) = F_{h+3} - 1$$
 
 $$F_h \approx \frac{\phi^{h}}{\sqrt{5}} - 1$$   $\phi \approx 1.618$[4]
 
-$N(T_h) \approx \phi^{h+2} - 1$
+$$N(T_h) \approx \phi^{h+2} - 1$$
 
 $$h+2 \approx \log_\phi(N(T_h))$$
 
