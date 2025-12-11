@@ -115,6 +115,12 @@ Observe the pattern, we have
 $$N(T_h) = N(T_{h-1}) + N(T_{h-2}) + 1$$
 
 For Fibonnacci Sequence(F) and Height(h), we have $(F_h)$, $$N(T_2) = F_4 + F_3 -1 = (F_5) - 1$$ 
+
+$$F(h) \approx \frac{\phi^{h}}{\sqrt{5}} - 1$$[4]
+
+$F(h) \approx \phi^h$
+
+
 ## Empirical Analysis
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
 [analysis_random_height](analysis_random_height.csv), 
@@ -255,3 +261,5 @@ The design of the AVL tree guarantees that the tree will always stay balanced. H
 [2] Ben Pfaff. 2004. Performance analysis of BSTs in system software. ACM SIGMETRICS Performance Evaluation Review 32, 1 (June 2004), 410–411.
 
 [3] Mark Russinovich and David A. Solomon. 2005. Microsoft Windows Internals (4th ed.). Microsoft Press, Redmond, WA, USA.
+
+[4] Donald E. Knuth. 1997. The Art of Computer Programming, Vol. 1: Fundamental Algorithms (3rd ed.). Addison-Wesley Professional, Reading, MA.
