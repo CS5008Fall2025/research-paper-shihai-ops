@@ -114,7 +114,7 @@ Observe the pattern, we have
 
 $$N(T_h) = N(T_{h-1}) + N(T_{h-2}) + 1$$
 
-For Fibonnacci Sequence(F) and Height(h), we have $(F_h)$, $$N(T_3) = N(T_2) + F_4 + T_3 -1 = (F_5) - 1$$ 
+For Fibonnacci Sequence(F) and Height(h), we have $(F_h)$, $$N(T_2) = F_4 + F_3 -1 = (F_5) - 1$$ 
 ## Empirical Analysis
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
 [analysis_random_height](analysis_random_height.csv), 
