@@ -109,7 +109,7 @@ In comparison, the AVL tree will automatically detect this imbalance using the b
         return y
 
 ```
-
+To calculate the time complexity of insertion for an AVL tree, we need to first check the minimum Number(n) of nodes needed to build a balanced tree(T) with height(h).  A balanced tree with minimum number of node $T_n$ consists of $T_{n-1}$ and $T_{n-2}$. 
 ## Empirical Analysis
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
 [analysis_random_height](analysis_random_height.csv), 
