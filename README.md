@@ -6,7 +6,7 @@
 
 
 
-Note the following is an example outline to help you. Please rework as you need, you do not need to follow the section heads and *YOU SHOULD NOT* make everything a bulleted list. This needs to read as an executive report/research paper. 
+Note the following is an example outline to help you. Please rework as you need, you do not need to follow the section heads, and *YOU SHOULD NOT* make everything a bulleted list. This needs to read as an executive report/research paper. 
 
 ## Introduction
 This paper focuses on the properties of the AVL Tree and its implementation. The AVL tree is one of the most important data structures invented by Georgy Adelson-Velsky and Evgenii Landis	in 1962. It creatively resolved the problem of BST(Binary Search Tree) when processing well-sorted data. In this case, the BST will degrade to a linked list, and the time complexity of search, insert and delete would be $O(n)$. To solve this problem, the AVL tree introduces a self-balancing property where the heights of the two child subtrees of any node differ by at most one (known as the Balance Factor). If this property is violated during an insertion or deletion, the tree automatically restores balance through a series of rotation operations (Left, Right, Left-Right, or Right-Left). This mechanism guarantees that the tree height always remains logarithmic relative to the number of nodes, ensuring a time complexity of $O(\log n)$ for search, insertion, and deletion operations. 
@@ -94,7 +94,7 @@ def _insert(self, node, key):
 ```
 In comparison, the AVL tree will automatically detect this imbalance using the balance factor, which tracks the height difference between the left and right subtrees. When sorted data (e.g., [1, 2, 3, 4, 5]) is inserted, the AVL tree recognizes that the tree is becoming right-heavy (balance factor < -1). It immediately triggers a ```left_rotate``` to restructure the nodes, reduce the height, and ensure the root remains a median value rather than the smallest element.
 ```python
-# Check if the right is too heavy and input is larger than the current right children.
+# Check if the right is too heavy and the input is larger than the current right children.
     if balance < -1 and key > node.right.key:
         return self.left_rotate(node) #If it is true, perform left rotation.
 
@@ -240,8 +240,8 @@ class AVLTree:
 
 
 ## Summary
-- Provide a summary of your findings
-- What did you learn?
+
+The design of the AVL tree guarantees that the tree will always stay balanced. Hence, the height would not exceed $H \approx 1.44 \log_2 N$. Making it much faster when inserting sorted data. The tree would first receive inserted data like BST, Update height, using the height of the left subtree minus the right subtree to get the balance factor, decide if the tree is still balanced after insertion(Whether to perform rotation or not), and decide how to make the rotation based on the balance factor and the value of the new node. In this program, I have learned that AVL, as a balanced tree, can dramatically optimize the time complexity compared to a sorted linked list. Although its performance may not be as good as traditional BST because of the extra process of checking height and rotating nodes, overall, the big O time complexity is consistent in all cases, making it a better solution in general, since input order cannot be predicted or guaranteed in the real world. 
 
 ## Reference
 [1] G. M. Adelson-Velsky and E. M. Landis. 1962. An algorithm for the organization of information. Doklady Akademii Nauk SSSR 146 (1962), 263–266. (English translation: Soviet Math. Dokl. 3, 1259–1263).
