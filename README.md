@@ -118,8 +118,8 @@ For Fibonnacci Sequence(F) and Height(h), we have $(F_h)$, $$N(T_2) = F_4 + F_3 
 
 $$N(T_h) = F_{h+3} - 1$$
 
-$$F_h \approx \frac{\phi^{h}}{\sqrt{5}} - 1$$   $\phi \approx 1.618$[4]
-
+$$F_h \approx \frac{\phi^{h}}{\sqrt{5}} - 1$$   
+$$\phi \approx 1.618$$[4]
 $$N(T_h) \approx \phi^{h+2} - 1$$
 
 $$h+2 \approx \log_\phi(N(T_h))$$
