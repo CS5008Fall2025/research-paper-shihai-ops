@@ -109,8 +109,12 @@ In comparison, the AVL tree will automatically detect this imbalance using the b
         return y
 
 ```
-To calculate the time complexity of insertion for an AVL tree, we need to first check the minimum Number(n) of nodes needed to build a balanced tree(T) with height(h).  A balanced tree with minimum number of node $T_h$ consists of $T_{h-1}$ and $T_{h-2}$. $N(T_1)$ = 1, $N(T_2)$ = 2,  $N(T_3)$ = 4, $N(T_4)$ = 7. 
-Observe the pattern, we have $$N(T_h) = N(T_{h-1}) + N(T_{h-2}) + 1$$
+To calculate the time complexity of insertion for an AVL tree, we need to first check the minimum Number(n) of nodes needed to build a balanced tree(T) with height(h).  A balanced tree with minimum number of node $T_h$ consists of $T_{h-1}$ and $T_{h-2}$. $N(T_0)$ = 1, $N(T_1)$ = 2,  $N(T_2)$ = 4, $N(T_3)$ = 7. 
+Observe the pattern, we have 
+
+$$N(T_h) = N(T_{h-1}) + N(T_{h-2}) + 1$$
+
+For Fibonnacci Sequence(F) and Height(h), we have $(F_h)$, $$N(T_3) = N(T_2) + F_4 + T_3 -1 = (F_5) - 1$$ 
 ## Empirical Analysis
 The forms of tree height versus the sample size of random, reverse-sorted, and ascending-sorted are shown below. In sorted and reversed form, BST is not included after n=2000 since it is too slow and will make the following line chart harder to read. 
 [analysis_random_height](analysis_random_height.csv), 
