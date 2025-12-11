@@ -116,6 +116,8 @@ $$N(T_h) = N(T_{h-1}) + N(T_{h-2}) + 1$$
 
 For Fibonnacci Sequence(F) and Height(h), we have $(F_h)$, $$N(T_2) = F_4 + F_3 -1 = (F_5) - 1$$ 
 
+$$N(T_n) = (F_{n+3}) - 1$$
+
 $$F(h) \approx \frac{\phi^{h}}{\sqrt{5}} - 1$$[4]
 
 $F(h) \approx \phi^h$
