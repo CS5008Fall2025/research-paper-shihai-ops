@@ -120,9 +120,9 @@ $$N(T_h) = F_{h+3} - 1$$
 
 $$F_h \approx \frac{\phi^{h}}{\sqrt{5}} - 1$$ [4]  
 $$\phi \approx 1.618$$
-$$N(T_h) \approx \phi^{h+2} - 1$$
+$$N(T_h) \approx \phi^{h+3} - 1$$
 
-$$h+2 \approx \log_\phi(N(T_h))$$
+$$h+3 \approx \log_\phi(N(T_h))$$
 
 $$h \approx 1.44 \log_2 N$$    [5]
 
